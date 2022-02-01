@@ -19,6 +19,14 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
+  department: {
+    type: String,
+    required: true,
+  }, 
+  team: {
+  type: String,
+  required: true
+},
   thoughts: [
     {
       type: Schema.Types.ObjectId,
