@@ -6,32 +6,37 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      thoughts {
+      tickets {
         _id
-        thoughtText
+        ticketText
         createdAt
       }
     }
   }
 `;
 
-export const QUERY_THOUGHTS = gql`
-  query getThoughts {
-    thoughts {
+export const QUERY_TICKETS = gql`
+  query getTICKETS {
+    tickets {
       _id
-      thoughtText
-      thoughtAuthor
+      ticketText
+      ticketDepartment
+      ticketEmail
+      ticketName
+      ticketPhone
+      ticketTeam
+      ticketAuthor
       createdAt
     }
   }
 `;
 
-export const QUERY_SINGLE_THOUGHT = gql`
-  query getSingleThought($thoughtId: ID!) {
-    thought(thoughtId: $thoughtId) {
+export const QUERY_SINGLE_TICKET = gql`
+  query getSingleTicket($ticketId: ID!) {
+    ticket(ticketId: $ticketId) {
       _id
-      thoughtText
-      thoughtAuthor
+      ticketText
+      ticketAuthor
       createdAt
       comments {
         _id
@@ -49,10 +54,10 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      thoughts {
+      tickets {
         _id
-        thoughtText
-        thoughtAuthor
+        ticketText
+        ticketAuthor
         createdAt
       }
     }
