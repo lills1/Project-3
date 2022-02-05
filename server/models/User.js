@@ -27,10 +27,10 @@ const userSchema = new Schema({
   type: String,
   required: true
 },
-  thoughts: [
+  tickets: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Thought',
+      ref: 'Ticket',
     },
   ],
 });
