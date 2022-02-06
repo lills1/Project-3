@@ -41,7 +41,7 @@ const CommentForm = ({ ticketId }) => {
 
   return (
     <div>
-      <h4>What are your thoughts on this ticket?</h4>
+      <h4>Do you have any suggestions?</h4>
 
       {Auth.loggedIn() ? (
         <>

@@ -55,16 +55,24 @@ const TicketForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'ticketText' || 'ticketTeam' || 'ticketPhone' || 'ticketName' || 'ticketDepartment' || 'ticketEmail') {
+    if (name === 'ticketText') {
       setFormState({ ...formState, [name]: value })
-    } else if (name !== 'ticketText') {
+    } else if (name === 'ticketTeam') {
+      setFormState({ ...formState, [name]: value });
+    } else if (name === 'ticketDepartment') {
+      setFormState({ ...formState, [name]: value });
+    } else if (name === 'ticketEmail') {
+      setFormState({ ...formState, [name]: value });
+    } else if (name === 'ticketName') {
+      setFormState({ ...formState, [name]: value });
+    } else if (name === 'ticketPhone') {
       setFormState({ ...formState, [name]: value });
     }
   };
 
   return (
     <div>
-      <h3>Create a ticket</h3>
+      <h3 className="createTicket">Create a ticket</h3>
 
       {Auth.loggedIn() ? (
         <>

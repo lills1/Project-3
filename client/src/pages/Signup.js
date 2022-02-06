@@ -11,8 +11,8 @@ const Signup = () => {
     username: '',
     email: '',
     password: '',
-    department:'',
-    team:''
+    department: '',
+    team: ''
   });
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
@@ -44,7 +44,7 @@ const Signup = () => {
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
         <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
+          <h4 className="card-header bg-dark text-light p-2 login-text">Sign Up</h4>
           <div className="card-body">
             {data ? (
               <p>
@@ -69,7 +69,7 @@ const Signup = () => {
                   value={formState.email}
                   onChange={handleChange}
                 />
-                 <input
+                <input
                   className="form-input"
                   placeholder="Your department"
                   name="department"
@@ -77,7 +77,7 @@ const Signup = () => {
                   value={formState.department}
                   onChange={handleChange}
                 />
-                  <input
+                <input
                   className="form-input"
                   placeholder="Your team"
                   name="team"
@@ -93,13 +93,15 @@ const Signup = () => {
                   value={formState.password}
                   onChange={handleChange}
                 />
-                <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: 'pointer' }}
-                  type="submit"
-                >
-                  Submit
-                </button>
+                <div className="submit-align">
+                  <button
+                    className="btn btn-primary"
+                    style={{ cursor: 'pointer' }}
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>
               </form>
             )}
 

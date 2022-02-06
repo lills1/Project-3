@@ -49,6 +49,10 @@ export const ADD_COMMENT = gql`
     addComment(ticketId: $ticketId, commentText: $commentText) {
       _id
       ticketText
+      ticketDepartment
+      ticketPhone
+      ticketEmail
+      ticketTeam
       ticketAuthor
       createdAt
       comments {

@@ -19,13 +19,13 @@ const Home = () => {
         >
           <TicketForm />
         </div>
-        <div className="col-12 col-md-8 mb-3">
+        <div className="col-12 col-md-8 mb-3 login-text">
           {loading ? (
             <div>Loading...</div>
           ) : (
             <TicketList
               tickets={tickets}
-              title="Some Feed for Thought(s)..."
+              title="All tickets"
             />
           )}
         </div>

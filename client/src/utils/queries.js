@@ -36,6 +36,10 @@ export const QUERY_SINGLE_TICKET = gql`
     ticket(ticketId: $ticketId) {
       _id
       ticketText
+      ticketDepartment
+      ticketTeam
+      ticketEmail
+      ticketPhone
       ticketAuthor
       createdAt
       comments {

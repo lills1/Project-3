@@ -3,7 +3,6 @@ import React from 'react';
 // Import the `useParams()` hook
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
 import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
 
@@ -25,26 +24,49 @@ const SingleTicket = () => {
   }
   return (
     <div className="my-3">
-      <h3 className="card-header bg-dark text-light p-2 m-0">
+      <h3 className="card-header bg-dark text-light p-2 m-0 login-text">
         {ticket.ticketAuthor} <br />
         <span style={{ fontSize: '1rem' }}>
-          had this thought on {ticket.createdAt}
+          Created this ticket on {ticket.createdAt}
         </span>
       </h3>
+      <div>
       <div className="bg-light py-4">
         <blockquote
-          className="p-4"
-          style={{
-            fontSize: '1.5rem',
-            fontStyle: 'italic',
-            border: '2px dotted #1a1a1a',
-            lineHeight: '1.5',
-          }}
         >
-          {ticket.ticketText}
+          {ticket.ticketName} User's issue: {ticket.ticketText}
         </blockquote>
       </div>
 
+      <div className="bg-light py-4">
+        <blockquote
+
+        >
+          User's department: {ticket.ticketDepartment}
+        </blockquote>
+      </div>
+
+      <div className="bg-light py-4">
+        <blockquote
+        >
+          User's Team: {ticket.ticketTeam}
+        </blockquote>
+      </div>
+
+      <div className="bg-light py-4">
+        <blockquote
+        >
+          User's contact number: {ticket.ticketPhone}
+        </blockquote>
+      </div>
+
+      <div className="bg-light py-4">
+        <blockquote
+        >
+          User's email: {ticket.ticketEmail}
+        </blockquote>
+      </div>
+</div>
       <div className="my-5">
         <CommentList comments={ticket.comments} />
       </div>
