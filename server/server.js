@@ -8,7 +8,6 @@ const { authMiddleware } = require('./utils/auth');
 const db = require('./config/connection');
 const PORT = process.env.PORT || 3001;
 const app = express();
-const uri = process.env.MONGODB_URI;
 const publicPath = path.join(__dirname, '..', 'public');
 app.use(express.static(publicPath));
 
