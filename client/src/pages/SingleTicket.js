@@ -79,7 +79,7 @@ const SingleTicket = () => {
             User's email: {ticket.ticketEmail}
           </blockquote>
         </div>
-        <button onClick={handleDelete} type="button" class="btn btn-danger">Danger</button>
+        <button onClick={handleDelete} type="button" className="btn btn-danger">Delete ticket</button>
       </div>
       <div className="my-5">
         <CommentList comments={ticket.comments} />
