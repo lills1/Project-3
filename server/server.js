@@ -16,7 +16,7 @@ app.use(express.static(publicPath));
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: authMiddleware,
+  context: authMiddleware
 });
 
 server.applyMiddleware({ app });

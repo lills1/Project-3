@@ -7,6 +7,7 @@ import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
 import { REMOVE_TICKET } from '../utils/mutations'
 import { QUERY_SINGLE_TICKET } from '../utils/queries';
+import Dropdown from '../components/DropDown/DropDown'
 
 const SingleTicket = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
@@ -37,17 +38,17 @@ const SingleTicket = () => {
           Created this ticket on {ticket.createdAt}
         </span>
       </h3>
+
       <div className="bg-light py-4">
-        <blockquote
-        >
-          Status: {ticket.ticketStatus}
-        </blockquote>
+        <Dropdown
+          ticketStatus={ticket.ticketStatus} />
       </div>
       <div>
         <div className="bg-light py-4">
           <blockquote
           >
-            {ticket.ticketName} User's issue: {ticket.ticketText}
+            Issue: {ticket.ticketText}
+
           </blockquote>
         </div>
 
@@ -79,7 +80,8 @@ const SingleTicket = () => {
             User's email: {ticket.ticketEmail}
           </blockquote>
         </div>
-        <button onClick={handleDelete} type="button" class="btn btn-danger">Danger</button>
+        <button onClick={handleDelete} type="button" className="btn btn-danger">Delete ticket</button>
+        <button onClick={handleDelete} type="button" className="btn btn-danger">Update ticket</button>
       </div>
       <div className="my-5">
         <CommentList comments={ticket.comments} />

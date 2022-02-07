@@ -41,6 +41,7 @@ export const QUERY_SINGLE_TICKET = gql`
       ticketEmail
       ticketPhone
       ticketAuthor
+      ticketStatus
       createdAt
       comments {
         _id
