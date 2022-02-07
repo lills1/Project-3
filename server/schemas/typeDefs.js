@@ -8,7 +8,7 @@ const typeDefs = gql`
     password: String
     department: String
     team:String
-    tickets: [Ticket]!
+    tickets: [Ticket!]
   }
 
   type Ticket {
@@ -22,7 +22,7 @@ const typeDefs = gql`
     ticketAuthor: String
     createdAt: String
     ticketStatus:String
-    comments: [Comment]!
+    comments: [Comment!]
   }
 
   type Comment {

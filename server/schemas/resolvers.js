@@ -48,7 +48,7 @@ const resolvers = {
 
       return { token, user };
     },
-    addTicket: async (parent, { ticketText, ticketTeam, ticketPhone, ticketEmail, ticketName, ticketDepartment, ticketStatus}, context) => {
+    addTicket: async (parent, { ticketText, ticketTeam, ticketPhone, ticketEmail, ticketName, ticketDepartment, ticketStatus }, context) => {
       if (context.user) {
         const ticket = await Ticket.create({
           ticketText,
@@ -93,11 +93,6 @@ const resolvers = {
           _id: ticketId,
           ticketAuthor: context.user.username,
         });
-
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $pull: { tickets: ticket._id } }
-        );
 
         return ticket;
       }
