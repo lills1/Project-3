@@ -6,7 +6,7 @@ const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
 
 const db = require('./config/connection');
-const uri = process.env.MONGODB_URI;
+
 const PORT = process.env.PORT || 3001;
 const app = express();
 
