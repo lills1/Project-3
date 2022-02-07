@@ -1,49 +1,49 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ThoughtList = ({
-  thoughts,
+const TicketList = ({
+  tickets,
   title,
   showTitle = true,
   showUsername = true,
 }) => {
-  if (!thoughts.length) {
-    return <h3>No Thoughts Yet</h3>;
+  if (!tickets.length) {
+    return <h3>No Tickets Yet</h3>;
   }
 
   return (
     <div>
       {showTitle && <h3>{title}</h3>}
-      {thoughts &&
-        thoughts.map((thought) => (
-          <div key={thought._id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
+      {tickets &&
+        tickets.map((ticket) => (
+          <div key={ticket._id} className="card mb-3">
+            <h4 className="card-header bg-primary text-light p-2 m-0 login-text">
               {showUsername ? (
                 <Link
                   className="text-light"
-                  to={`/profiles/${thought.thoughtAuthor}`}
+                  to={`/profiles/${ticket.ticketAuthor}`}
                 >
-                  {thought.thoughtAuthor} <br />
+                  {ticket.ticketAuthor} <br />
                   <span style={{ fontSize: '1rem' }}>
-                    had this thought on {thought.createdAt}
+                    Submitted this ticket on {ticket.createdAt}
                   </span>
                 </Link>
               ) : (
                 <>
                   <span style={{ fontSize: '1rem' }}>
-                    You had this thought on {thought.createdAt}
+                    You submitted this ticket on {ticket.createdAt}
                   </span>
                 </>
               )}
             </h4>
             <div className="card-body bg-light p-2">
-              <p>{thought.thoughtText}</p>
+              <p> Description of issue: {ticket.ticketText}</p>
             </div>
             <Link
               className="btn btn-primary btn-block btn-squared"
-              to={`/thoughts/${thought._id}`}
+              to={`/tickets/${ticket._id}`}
             >
-              Join the discussion on this thought.
+              See more details or leave a suggestion
             </Link>
           </div>
         ))}
@@ -51,4 +51,4 @@ const ThoughtList = ({
   );
 };
 
-export default ThoughtList;
+export default TicketList;

@@ -13,8 +13,8 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
+  mutation addUser($username: String!, $email: String!, $password: String!, $department:String!, $team:String!) {
+    addUser(username: $username, email: $email, password: $password, department:$department , team:$team) {
       token
       user {
         _id
@@ -24,12 +24,18 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_THOUGHT = gql`
-  mutation addThought($thoughtText: String!) {
-    addThought(thoughtText: $thoughtText) {
+export const ADD_TICKET = gql`
+  mutation addTicket($ticketText: String!, $ticketTeam:String!, $ticketPhone:String!, $ticketDepartment:String!, $ticketEmail:String!, $ticketName:String!, $ticketStatus:String) {
+    addTicket(ticketText: $ticketText, ticketTeam: $ticketTeam, ticketPhone:$ticketPhone, ticketDepartment:$ticketDepartment, ticketEmail:$ticketEmail, ticketName:$ticketName, ticketStatus:$ticketStatus) {
       _id
-      thoughtText
-      thoughtAuthor
+      ticketText
+      ticketTeam
+      ticketPhone
+      ticketDepartment
+      ticketEmail
+      ticketName
+      ticketAuthor
+      ticketStatus
       createdAt
       comments {
         _id
@@ -40,11 +46,15 @@ export const ADD_THOUGHT = gql`
 `;
 
 export const ADD_COMMENT = gql`
-  mutation addComment($thoughtId: ID!, $commentText: String!) {
-    addComment(thoughtId: $thoughtId, commentText: $commentText) {
+  mutation addComment($ticketId: ID!, $commentText: String!) {
+    addComment(ticketId: $ticketId, commentText: $commentText) {
       _id
-      thoughtText
-      thoughtAuthor
+      ticketText
+      ticketDepartment
+      ticketPhone
+      ticketEmail
+      ticketTeam
+      ticketAuthor
       createdAt
       comments {
         _id
@@ -54,3 +64,12 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
+
+export const REMOVE_TICKET = gql`
+mutation removeTicket($ticketId:ID!){
+  removeTicket(ticketId:$ticketId){
+    _id
+    ticketText
+  }
+}
+`
