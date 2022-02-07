@@ -17,7 +17,7 @@ const TicketList = ({
       {tickets &&
         tickets.map((ticket) => (
           <div key={ticket._id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
+            <h4 className="card-header bg-primary text-light p-2 m-0 login-text">
               {showUsername ? (
                 <Link
                   className="text-light"
@@ -25,25 +25,25 @@ const TicketList = ({
                 >
                   {ticket.ticketAuthor} <br />
                   <span style={{ fontSize: '1rem' }}>
-                    had this thought on {ticket.createdAt}
+                    Submitted this ticket on {ticket.createdAt}
                   </span>
                 </Link>
               ) : (
                 <>
                   <span style={{ fontSize: '1rem' }}>
-                    You had this thought on {ticket.createdAt}
+                    You submitted this ticket on {ticket.createdAt}
                   </span>
                 </>
               )}
             </h4>
             <div className="card-body bg-light p-2">
-              <p>{ticket.ticketText}</p>
+              <p> Description of issue: {ticket.ticketText}</p>
             </div>
             <Link
               className="btn btn-primary btn-block btn-squared"
               to={`/tickets/${ticket._id}`}
             >
-              Join the discussion on this ticket.
+              See more details or leave a suggestion
             </Link>
           </div>
         ))}

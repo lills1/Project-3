@@ -14,30 +14,34 @@ const ticketSchema = new Schema({
     required: true,
     trim: true,
   },
-  ticketTeam:{
+  ticketTeam: {
     type: String,
     required: true,
-    trim:true,
+    trim: true,
   },
-  ticketPhone:{
-    type:String,
-    required:true,
-    trim:true,
+  ticketPhone: {
+    type: String,
+    required: true,
+    trim: true,
   },
-  ticketEmail:{
-    type:String,
-    required:true,
-    trim:true,
+  ticketEmail: {
+    type: String,
+    required: true,
+    trim: true,
   },
-  ticketName:{
-    type:String,
-    required:true,
-    trim:true,
+  ticketName: {
+    type: String,
+    required: true,
+    trim: true,
   },
-  ticketDepartment:{
-    type:String,
-    required:true,
-    trim:true,
+  ticketDepartment: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  ticketStatus: {
+    type: String,
+    default: "Open"
   },
   createdAt: {
     type: Date,

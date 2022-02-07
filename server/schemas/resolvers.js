@@ -48,7 +48,7 @@ const resolvers = {
 
       return { token, user };
     },
-    addTicket: async (parent, { ticketText, ticketTeam, ticketPhone, ticketEmail, ticketName, ticketDepartment}, context) => {
+    addTicket: async (parent, { ticketText, ticketTeam, ticketPhone, ticketEmail, ticketName, ticketDepartment, ticketStatus}, context) => {
       if (context.user) {
         const ticket = await Ticket.create({
           ticketText,
@@ -57,6 +57,7 @@ const resolvers = {
           ticketEmail,
           ticketName,
           ticketDepartment,
+          ticketStatus,
           ticketAuthor: context.user.username,
         });
 
