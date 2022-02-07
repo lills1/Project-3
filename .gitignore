@@ -27,4 +27,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-heroku config:set MONGODB_URI="mongodb+srv://Lilly:Ge0rgieAndPepp4@cluster0.5olyw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
