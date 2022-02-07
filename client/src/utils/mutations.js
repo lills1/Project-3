@@ -25,8 +25,8 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_TICKET = gql`
-  mutation addTicket($ticketText: String!, $ticketTeam:String!, $ticketPhone:String!, $ticketDepartment:String!, $ticketEmail:String!, $ticketName:String!) {
-    addTicket(ticketText: $ticketText, ticketTeam: $ticketTeam, ticketPhone:$ticketPhone, ticketDepartment:$ticketDepartment, ticketEmail:$ticketEmail, ticketName:$ticketName) {
+  mutation addTicket($ticketText: String!, $ticketTeam:String!, $ticketPhone:String!, $ticketDepartment:String!, $ticketEmail:String!, $ticketName:String!, $ticketStatus:String) {
+    addTicket(ticketText: $ticketText, ticketTeam: $ticketTeam, ticketPhone:$ticketPhone, ticketDepartment:$ticketDepartment, ticketEmail:$ticketEmail, ticketName:$ticketName, ticketStatus:$ticketStatus) {
       _id
       ticketText
       ticketTeam
@@ -35,6 +35,7 @@ export const ADD_TICKET = gql`
       ticketEmail
       ticketName
       ticketAuthor
+      ticketStatus
       createdAt
       comments {
         _id
@@ -63,3 +64,12 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
+
+export const REMOVE_TICKET = gql`
+mutation removeTicket($ticketId:ID!){
+  removeTicket(ticketId:$ticketId){
+    _id
+    ticketText
+  }
+}
+`

@@ -2,21 +2,28 @@ import React from 'react';
 
 // Import the `useParams()` hook
 import { useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
-
+import { REMOVE_TICKET } from '../utils/mutations'
 import { QUERY_SINGLE_TICKET } from '../utils/queries';
 
 const SingleTicket = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
   const { ticketId } = useParams();
-
+  const [removeTicket, { error }] = useMutation(REMOVE_TICKET)
   const { loading, data } = useQuery(QUERY_SINGLE_TICKET, {
     // pass URL parameter
     variables: { ticketId: ticketId },
   });
-
+  const handleDelete = async () => {
+    await removeTicket({
+      variables: {
+        ticketId
+      }
+    })
+    window.location.replace("/me")
+  }
   const ticket = data?.ticket || {};
 
   if (loading) {
@@ -30,43 +37,50 @@ const SingleTicket = () => {
           Created this ticket on {ticket.createdAt}
         </span>
       </h3>
+      <div className="bg-light py-4">
+        <blockquote
+        >
+          Status: {ticket.ticketStatus}
+        </blockquote>
+      </div>
       <div>
-      <div className="bg-light py-4">
-        <blockquote
-        >
-          {ticket.ticketName} User's issue: {ticket.ticketText}
-        </blockquote>
-      </div>
+        <div className="bg-light py-4">
+          <blockquote
+          >
+            {ticket.ticketName} User's issue: {ticket.ticketText}
+          </blockquote>
+        </div>
 
-      <div className="bg-light py-4">
-        <blockquote
+        <div className="bg-light py-4">
+          <blockquote
 
-        >
-          User's department: {ticket.ticketDepartment}
-        </blockquote>
-      </div>
+          >
+            User's department: {ticket.ticketDepartment}
+          </blockquote>
+        </div>
 
-      <div className="bg-light py-4">
-        <blockquote
-        >
-          User's Team: {ticket.ticketTeam}
-        </blockquote>
-      </div>
+        <div className="bg-light py-4">
+          <blockquote
+          >
+            User's Team: {ticket.ticketTeam}
+          </blockquote>
+        </div>
 
-      <div className="bg-light py-4">
-        <blockquote
-        >
-          User's contact number: {ticket.ticketPhone}
-        </blockquote>
-      </div>
+        <div className="bg-light py-4">
+          <blockquote
+          >
+            User's contact number: {ticket.ticketPhone}
+          </blockquote>
+        </div>
 
-      <div className="bg-light py-4">
-        <blockquote
-        >
-          User's email: {ticket.ticketEmail}
-        </blockquote>
+        <div className="bg-light py-4">
+          <blockquote
+          >
+            User's email: {ticket.ticketEmail}
+          </blockquote>
+        </div>
+        <button onClick={handleDelete} type="button" class="btn btn-danger">Danger</button>
       </div>
-</div>
       <div className="my-5">
         <CommentList comments={ticket.comments} />
       </div>

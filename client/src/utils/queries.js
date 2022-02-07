@@ -63,6 +63,7 @@ export const QUERY_ME = gql`
         ticketText
         ticketAuthor
         createdAt
+        ticketStatus
       }
     }
   }

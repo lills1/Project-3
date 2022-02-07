@@ -21,6 +21,7 @@ const typeDefs = gql`
     ticketEmail:String
     ticketAuthor: String
     createdAt: String
+    ticketStatus:String
     comments: [Comment]!
   }
 
@@ -47,7 +48,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!, department: String!, team: String!): Auth
     login(email: String!, password: String!): Auth
-    addTicket(ticketText: String!, ticketTeam:String!, ticketPhone:String!, ticketDepartment:String!, ticketName:String!, ticketEmail:String!): Ticket
+    addTicket(ticketText: String!, ticketTeam:String!, ticketPhone:String!, ticketDepartment:String!, ticketName:String!, ticketEmail:String!, ticketStatus:String): Ticket
     addComment(ticketId: ID!, commentText: String!): Ticket
     removeTicket(ticketId: ID!): Ticket
     removeComment(ticketId: ID!, commentId: ID!): Ticket
