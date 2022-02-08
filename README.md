@@ -7,6 +7,7 @@
   - [Features](#features)
   - [Preview](#preview)
   - [Technologies Used](#technologies)
+  - [Future development](#future)
   - [License](#license)
   - [Contributing](#contribution)
   - [Questions](#questions)
@@ -20,7 +21,8 @@
 - View all submitted tickets
 - View only their submitted tickets
 ## Preview
-<>
+<img src="https://github.com/lills1/Ticketzz/blob/main/ticketzz.herokuapp.com_%20(1).png">
+
   ## Technologies
 - React.js
 - Express.js
@@ -33,6 +35,12 @@
 - bcrypt
 - Bootstrap
 - Heroku
+## Future development
+- Domain filtering upon sign up
+- Editing comments
+- Backend functionality for status
+- More pages - e.g. active tickets, closed tickets, your assigned tickets, your company
+- Have user info upon sign up displayed in profile 
   ## License
   MIT
   ## Contribution
