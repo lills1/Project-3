@@ -1725,3 +1725,7 @@ label form [type='radio'] {
  align-items: center;
  justify-content: center;
 }
+
+.placehold-align{
+  text-align: center;
+}

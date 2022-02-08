@@ -78,16 +78,16 @@ const TicketForm = () => {
         <>
 
           <form
-            className="flex-row justify-center justify-space-between-md align-center"
+            className="align-items-center"
             onSubmit={handleFormSubmit}
           >
-            <div className="col-12 col-lg-9">
+            <div className="col">
               <textarea
                 name="ticketName"
                 placeholder="What is your name?"
                 value={formState.ticketName}
                 className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                style={{ lineHeight: '1', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
 
@@ -96,7 +96,7 @@ const TicketForm = () => {
                 placeholder="What is your department?"
                 value={formState.ticketDepartment}
                 className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                style={{ lineHeight: '1', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
 
@@ -105,7 +105,7 @@ const TicketForm = () => {
                 placeholder="What is your team?"
                 value={formState.ticketTeam}
                 className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                style={{ lineHeight: '1', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
 
@@ -114,7 +114,7 @@ const TicketForm = () => {
                 placeholder="Please describe your issue"
                 value={formState.ticketText}
                 className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                style={{ lineHeight: '1', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
 
@@ -123,7 +123,7 @@ const TicketForm = () => {
                 placeholder="What is your contact number?"
                 value={formState.ticketPhone}
                 className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                style={{ lineHeight: '1', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
 
@@ -132,13 +132,13 @@ const TicketForm = () => {
                 placeholder="What is your contact email?"
                 value={formState.ticketEmail}
                 className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                style={{ lineHeight: '1', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
             </div>
 
-            <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+            <div className="submit-align">
+              <button className="btn btn-primary py-3" type="submit">
                 Add Ticket
               </button>
             </div>
