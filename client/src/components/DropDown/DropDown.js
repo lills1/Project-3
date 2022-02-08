@@ -6,10 +6,9 @@ function Dropdown({ ticketStatus }) {
         { label: "Closed", value: "Closed" },
         { label: "Pending", value: "Pending" }
     ]
-    // Using state to keep track of what the selected fruit is
+    
     let [status, setStatus] = useState(ticketStatus)
-    // Using this function to update the state of fruit
-    // whenever a new option is selected from the dropdown
+   
     let handleStatusChange = (e) => {
         setStatus(e.target.value)
     }
@@ -20,7 +19,7 @@ function Dropdown({ ticketStatus }) {
             <br />
             <select onChange={handleStatusChange}>
                 <option value="⬇️ Select a Status ⬇️"> -- Select a status -- </option>
-                {/* Mapping through each fruit object in our fruits array
+                {/* Mapping through each status object in our fruits array
           and returning an option element with the appropriate attributes / values.
          */}
                 {statuses.map((status) => <option value={status.value}>{status.label}</option>)}

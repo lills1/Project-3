@@ -3,7 +3,7 @@
   ## Description
   Having techy issues? Ticketzz is the way to go! Ticketzz is a ticketing system that allows companies a way to successfully manage their techy issues.
   ## Table of Contents 
-  - [Access] (#access)
+  - [Access](#access)
   - [Features](#features)
   - [Technologies Used](#technologies)
   - [License](#license)
@@ -11,7 +11,7 @@
   - [Tests](#tests)
   - [Questions](#questions)
   ## Access 
-  Live demo is <a href=">https://ticketzz.herokuapp.com/">here</a>
+  Live demo is <a href="https://ticketzz.herokuapp.com/">here</a>
   ## Features
 - Signup and login functionality
 - Create tickets

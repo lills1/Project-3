@@ -31,58 +31,62 @@ const SingleTicket = () => {
     return <div>Loading...</div>;
   }
   return (
-    <div className="my-3">
-      <h3 className="card-header bg-dark text-light p-2 m-0 login-text">
-        {ticket.ticketAuthor} <br />
-        <span style={{ fontSize: '1rem' }}>
-          Created this ticket on {ticket.createdAt}
-        </span>
-      </h3>
+    <div className="container">
+      <div className="col-lg-8 col-m-6 col-sm-4 mx-auto text-center font-text">
+        <h3 className="card-header bg-dark text-light p-2 m-0 login-text">
+          {ticket.ticketAuthor} <br />
+          <span style={{ fontSize: '1rem' }}>
+            Created this ticket on {ticket.createdAt}
+          </span>
+        </h3>
 
-      <div className="bg-light py-4">
-        <Dropdown
-          ticketStatus={ticket.ticketStatus} />
+        <div className="bg-light py-4">
+          <Dropdown
+            ticketStatus={ticket.ticketStatus} />
+        </div>
+        <div className="bg-light py-4">
+          <blockquote
+          >
+            <p className="text-style-form">Issue</p>
+            <p>{ticket.ticketText}</p>
+
+          </blockquote>
+        </div>
+
+        <div className="bg-light py-4">
+          <blockquote
+
+          >
+            <p className="text-style-form">User's department</p>
+            <p> {ticket.ticketDepartment}</p>
+          </blockquote>
+        </div>
+
+        <div className="bg-light py-4">
+
+          <p className="text-style-form"> User's Team</p>
+          <p>{ticket.ticketTeam}</p>
+
+        </div>
+
+        <div className="bg-light py-4">
+          <blockquote
+          >
+            <p className="text-style-form"> User's contact number</p>
+            <p>{ticket.ticketPhone}</p>
+          </blockquote>
+        </div>
+
+        <div className="bg-light py-4">
+          <blockquote
+          >
+            <p className="text-style-form"> User's email</p>
+            <p> {ticket.ticketEmail}</p>
+          </blockquote>
+        </div>
       </div>
-      <div>
-        <div className="bg-light py-4">
-          <blockquote
-          >
-            Issue: {ticket.ticketText}
+      <button onClick={handleDelete} type="button" className="btn btn-danger delete-button">Delete ticket</button>
 
-          </blockquote>
-        </div>
-
-        <div className="bg-light py-4">
-          <blockquote
-
-          >
-            User's department: {ticket.ticketDepartment}
-          </blockquote>
-        </div>
-
-        <div className="bg-light py-4">
-          <blockquote
-          >
-            User's Team: {ticket.ticketTeam}
-          </blockquote>
-        </div>
-
-        <div className="bg-light py-4">
-          <blockquote
-          >
-            User's contact number: {ticket.ticketPhone}
-          </blockquote>
-        </div>
-
-        <div className="bg-light py-4">
-          <blockquote
-          >
-            User's email: {ticket.ticketEmail}
-          </blockquote>
-        </div>
-        <button onClick={handleDelete} type="button" className="btn btn-danger">Delete ticket</button>
-        <button onClick={handleDelete} type="button" className="btn btn-danger">Update ticket</button>
-      </div>
       <div className="my-5">
         <CommentList comments={ticket.comments} />
       </div>
@@ -90,6 +94,7 @@ const SingleTicket = () => {
         <CommentForm ticketId={ticket._id} />
       </div>
     </div>
+
   );
 };
 
