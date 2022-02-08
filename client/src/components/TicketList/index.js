@@ -8,7 +8,7 @@ const TicketList = ({
   showUsername = true,
 }) => {
   if (!tickets.length) {
-    return <h3>No Tickets Yet</h3>;
+    return <h3 className='text-center'>No Tickets Yet</h3>;
   }
 
   return (

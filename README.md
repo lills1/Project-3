@@ -5,10 +5,10 @@
   ## Table of Contents 
   - [Access](#access)
   - [Features](#features)
+  - [Preview](#preview)
   - [Technologies Used](#technologies)
   - [License](#license)
   - [Contributing](#contribution)
-  - [Tests](#tests)
   - [Questions](#questions)
   ## Access 
   Live demo is <a href="https://ticketzz.herokuapp.com/">here</a>
@@ -19,6 +19,8 @@
 - Leave suggestions on other tickets
 - View all submitted tickets
 - View only their submitted tickets
+## Preview
+<>
   ## Technologies
 - React.js
 - Express.js
@@ -35,8 +37,6 @@
   MIT
   ## Contribution
   No contribution available
-  ## Tests
-    no testing
   ## Questions
 <a href= "https://github.com/lills1"> github </a>
 <br>
